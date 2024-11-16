@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero'
 import { Features } from '@/components/Features'
 import { Partners } from '@/components/Partners'
 import { Journey } from '@/components/Journey'
+import { Blog } from '@/components/Blog'
 
 export function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -24,6 +25,7 @@ export function HomePage() {
       <Features />
       <Partners />
       <Journey />
+      <Blog />
     </div>
   )
 }
