@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Hero } from '@/components/Hero'
 import { Features } from '@/components/Features'
+import { Partners } from '@/components/Partners'
 
 export function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -20,6 +21,7 @@ export function HomePage() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <Features />
+      <Partners />
     </div>
   )
 }
