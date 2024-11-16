@@ -1,12 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 // You would need to add actual partner logos
 const partners = [
-  { name: 'Partner 1', logo: '/placeholder-1.svg' },
-  { name: 'Partner 2', logo: '/placeholder-2.svg' },
-  { name: 'Partner 3', logo: '/placeholder-3.svg' },
-  { name: 'Partner 4', logo: '/placeholder-4.svg' },
+  { name: 'Hero', logo: '/logo1.svg' },
+  { name: 'Honda', logo: '/logo2.svg' },
+  { name: 'TVS', logo: '/logo3.svg' },
+  { name: 'Bajaj', logo: '/logo5.svg' },
+  { name: 'Royal Enfield', logo: '/logo6.svg' },
 ]
 
 export function Partners() {
@@ -16,7 +18,7 @@ export function Partners() {
         <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
           Trusted by Leading Companies
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <div className="grid md:grid-cols-5 gap-8 items-center">
           {partners.map((partner, index) => (
             <motion.div
               key={index}
@@ -25,11 +27,15 @@ export function Partners() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex justify-center"
             >
-              {/* <img
-                src={`/api/placeholder/200/100`}
+              <div className='p-3 rounded bg-white'>
+              <Image
+                src={partner.logo}
+                height={60}
+                width={120}
                 alt={partner.name}
                 className="h-12 object-contain grayscale hover:grayscale-0 transition-all"
-              /> */}
+              />
+              </div>
             </motion.div>
           ))}
         </div>

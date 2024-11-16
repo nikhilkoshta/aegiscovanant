@@ -2,66 +2,60 @@
 import Link from 'next/link'
 import { Shield } from 'lucide-react'
 
-const footerLinks = {
-  company: ['About Us', 'Careers', 'Contact Us', 'Blog'],
-  services: ['Roadside Assistance', 'Insurance Plans', 'Claims Process', 'Support'],
-  legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Licenses'],
-  support: ['FAQs', 'Help Center', 'Customer Service', 'Emergency Contact']
-}
-
 export function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t dark:border-gray-800">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Shield className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-              <span className="font-bold text-xl dark:text-white">Aegis Covenant</span>
-            </Link>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Providing reliable insurance and roadside assistance services for your peace of mind.
-            </p>
-          </div>
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-4 capitalize">
-                {title}
-              </h3>
+    <footer className="bg-gray-100 dark:bg-gray-900 py-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <Link href="/" className="flex items-center space-x-2 mb-4">
+                <Shield className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                <span className="font-bold text-xl dark:text-white">Aegis Covenant</span>
+              </Link>
+              <p className="text-gray-600 dark:text-gray-400">Your trusted partner for roadside assistance and insurance management.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-4 dark:text-white">Quick Links</h3>
               <ul className="space-y-2">
-                {links.map((link, index) => (
+                {["Home", "About Us", "Services", "Blog", "Contact"].map((item, index) => (
                   <li key={index}>
-                    <Link
-                      href="#"
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {link}
+                    <Link href="#" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                      {item}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
-        <div className="border-t dark:border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
-              © {new Date().getFullYear()} Aegis Covenant. All rights reserved.
-            </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                Twitter
-              </Link>
-              <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                LinkedIn
-              </Link>
-              <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                Facebook
-              </Link>
+            <div>
+              <h3 className="font-semibold text-lg mb-4 dark:text-white">Services</h3>
+              <ul className="space-y-2">
+                {["Roadside Assistance", "Insurance Management", "Vehicle Renting", "Subscription Services"].map((item, index) => (
+                  <li key={index}>
+                    <Link href="#" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-4 dark:text-white">Contact Us</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">123 Main Street, City, Country</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-2">Phone: +91 98111 56464</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">Email: info@aegiscovenant.com</p>
+              <div className="flex space-x-4">
+                {["Facebook", "Twitter", "LinkedIn", "Instagram"].map((social, index) => (
+                  <a key={index} href="#" className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+                    <span className="sr-only">{social}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
+          <div className="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-gray-600 dark:text-gray-400">
+            <p>&copy; 2024 Aegis Covenant. All rights reserved.</p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   )
 }

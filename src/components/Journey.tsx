@@ -1,66 +1,34 @@
 'use client'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-
-const steps = [
-  {
-    number: '01',
-    title: 'Sign Up',
-    description: 'Create your account in minutes'
-  },
-  {
-    number: '02',
-    title: 'Choose Coverage',
-    description: 'Select the perfect plan for your needs'
-  },
-  {
-    number: '03',
-    title: 'Get Protected',
-    description: 'Enjoy immediate coverage and support'
-  }
-]
+import { Button } from './ui/button'
 
 export function Journey() {
   return (
-    <section className="py-16 md:py-24 px-4">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Start Your Journey
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Getting started with Aegis Covenant is simple and straightforward
-          </p>
+    <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-5xl font-bold mb-4 dark:text-white">
+              Make your journey safer, more convenient and stress-free
+            </h2>
+            <p className="text-2xl text-gray-600 dark:text-gray-300 mb-6">
+              Experience seamless transportation solutions with our wide-ranging services
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 mb-8">
+              Our commitment to personalized, reliable and cutting-edge offerings, combined with our Pan-India presence and partnerships with industry leaders, make us your one-stop-shop for all your mobility needs
+            </p>
+            <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600">
+              Check Out More
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </motion.div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              <div className="flex items-start space-x-4">
-                <span className="text-4xl font-bold text-blue-600 dark:text-blue-400">
-                  {step.number}
-                </span>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {step.description}
-                  </p>
-                </div>
-                {index < steps.length - 1 && (
-                  <ChevronRight className="hidden md:block h-6 w-6 text-gray-400 absolute right-0 top-1/2 -translate-y-1/2" />
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
   )
 }

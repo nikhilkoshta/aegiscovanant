@@ -1,15 +1,18 @@
-'use client'
-import { useState, useEffect } from 'react'
-import { Header } from '../components/Header'
-import { Hero } from '@/components/Hero'
-import { Features } from '@/components/Features'
-import { Partners } from '@/components/Partners'
-import { Journey } from '@/components/Journey'
-import { Blog } from '@/components/Blog'
-import { CustomerReviews } from '@/components/CustomerReviews'
-import { Footer } from '@/components/Footer'
+'use client';
 
-export function HomePage() {
+import { Blog } from "@/components/Blog";
+import { CustomerReviews } from "@/components/CustomerReviews";
+import { Features } from "@/components/Features";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Journey } from "@/components/Journey";
+import { Partners } from "@/components/Partners";
+import { useEffect, useState } from "react";
+
+
+export default function Home() {
+
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
@@ -21,15 +24,17 @@ export function HomePage() {
   }, [darkMode])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100/50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Hero />
-      <Features />
-      <Partners />
-      <Journey />
-      <Blog />
-      <CustomerReviews />
+      <main>
+        <Hero />
+        <Features />
+        <Partners />
+        <Journey />
+        <Blog />
+        <CustomerReviews />
+      </main>
       <Footer />
     </div>
-  )
+  );
 }
