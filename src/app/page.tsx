@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { Header } from '../components/Header'
 import { Hero } from '@/components/Hero'
+import { Features } from '@/components/Features'
 
 export function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -18,6 +19,7 @@ export function HomePage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100/50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
+      <Features />
     </div>
   )
 }
