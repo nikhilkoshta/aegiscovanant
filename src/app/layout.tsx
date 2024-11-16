@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Aegis Covenant',
-  description: 'Insurance and Roadside Assistance Services',
+  title: 'Aegis Covenant - Insurance & Roadside Assistance',
+  description: 'Your trusted partner for insurance and roadside assistance services',
 }
 
 export default function RootLayout({
